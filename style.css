@@ -1,0 +1,71 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #00aaff;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.color-options, .logo-upload {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+}
+
+#qrContainer {
+  margin-top: 20px;
+}
+
+#savedQRCodes {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#savedList img {
+  width: 100px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro QR Maker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Free QR Maker</h1>
+    <p>Enter a link and customize your QR code</p>
+
+    <input type="text" id="linkInput" placeholder="Enter URL (e.g. https://example.com)" />
+
+    <div class="color-options">
+      <label>QR Color: <input type="color" id="qrColor" value="#000000"></label>
+      <label>Background: <input type="color" id="bgColor" value="#ffffff"></label>
+    </div>
+
+    <div class="logo-upload">
+      <label>Upload Logo (optional):</label>
+      <input type="file" id="logoInput" accept="image/*">
+    </div>
+
+    <button id="generateBtn">Generate QR</button>
+
+    <div id="qrContainer" class="hidden">
+      <h3>Your QR Code:</h3>
+      <canvas id="qrCode"></canvas>
+      <p>
+        <a id="downloadLink" href="#" download="qrcode.png">Download QR</a>
+      </p>
+      <p>
+        <button id="saveQR">Save QR</button>
+      </p>
+    </div>
+
+    <div id="savedQRCodes" class="hidden">
+      <h3>Saved QRs</h3>
+      <div id="savedList"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
