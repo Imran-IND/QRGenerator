@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pro QR Maker</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free QR Maker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>Free QR Maker</h1>
     <p>Enter a link and customize your QR code</p>
 
-    <input type="text" id="linkInput" placeholder="Enter URL (e.g. https://example.com)" />
+    <input type="text" id="linkInput" placeholder="Enter URL" />
 
     <div class="color-options">
       <label>QR Color: <input type="color" id="qrColor" value="#000000"></label>
       <label>Background: <input type="color" id="bgColor" value="#ffffff"></label>
+      <label>Border Color: <input type="color" id="borderColor" value="#000000"></label>
+    </div>
+
+    <div class="border-options">
+      <label>Border Size:
+        <input type="range" id="borderSize" min="1" max="20" value="2">
+        <span id="borderValue">2px</span>
+      </label>
+
+      <label>Corner Style:
+        <select id="borderStyle">
+          <option value="sharp">Sharp</option>
+          <option value="round">Round</option>
+        </select>
+      </label>
     </div>
 
     <div class="logo-upload">
@@ -24,16 +39,13 @@
     </div>
 
     <button id="generateBtn">Generate QR</button>
+    <button id="resetDesign" class="hidden">Reset Design</button>
 
     <div id="qrContainer" class="hidden">
       <h3>Your QR Code:</h3>
       <canvas id="qrCode"></canvas>
-      <p>
-        <a id="downloadLink" href="#" download="qrcode.png">Download QR</a>
-      </p>
-      <p>
-        <button id="saveQR">Save QR</button>
-      </p>
+      <p><a id="downloadLink" href="#" download="qrcode.png">Download QR</a></p>
+      <p><button id="saveQR">Save QR</button></p>
     </div>
 
     <div id="savedQRCodes" class="hidden">
